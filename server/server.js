@@ -20,7 +20,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://abhishekrawat704235.github.io',
+    'http://localhost:5173'
+  ]
+}));
 app.use(express.json());
 
 // Connect to MongoDB
@@ -41,14 +46,12 @@ app.get('/api/status', (req, res) => {
   });
 });
 
-// Production Static Serving (when built)
 const distPath = path.join(__dirname, '../dist');
 if (fs.existsSync(distPath)) {
   app.use(express.static(distPath));
-  app.get('*', (req, res) => {
-    if (!req.path.startsWith('/api')) {
-      res.sendFile(path.join(distPath, 'index.html'));
-    }
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(distPath, 'index.html'));
   });
 }
 
