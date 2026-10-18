@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Shield, ArrowRight, Lock } from 'lucide-react';
-import { ACADEMY_INFO } from '../data/academyData';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Phone, Shield, ArrowRight, Lock } from "lucide-react";
+import { ACADEMY_INFO } from "../data/academyData";
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Classes', path: '/classes' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Achievements', path: '/achievements' },
-  { name: 'Contact Us', path: '/contact' },
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Classes", path: "/classes" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Achievements", path: "/achievements" },
+  { name: "Contact Us", path: "/contact" },
 ];
 
 export const Navbar: React.FC = () => {
@@ -29,16 +29,16 @@ export const Navbar: React.FC = () => {
             <span>{ACADEMY_INFO.affiliation}</span>
           </div>
           <div className="flex items-center space-x-4">
-            <a 
-              href={`tel:${ACADEMY_INFO.phone}`} 
+            <a
+              href={`tel:${ACADEMY_INFO.phone}`}
               className="flex items-center space-x-1 text-white hover:text-red-400 transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-red-500" />
               <span>Call: {ACADEMY_INFO.phoneDisplay}</span>
             </a>
             <span className="hidden sm:inline text-neutral-600">|</span>
-            <Link 
-              to="/admin" 
+            <Link
+              to="/admin"
               className="hidden sm:flex items-center space-x-1 text-neutral-400 hover:text-white transition-colors"
               title="Academy Staff Portal"
             >
@@ -52,16 +52,19 @@ export const Navbar: React.FC = () => {
       {/* Main navigation bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
           {/* Logo & Academy Name */}
-          <Link to="/" onClick={closeMenu} className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-neutral-950 rounded-xl flex items-center justify-center border-2 border-red-600 shadow-md group-hover:scale-105 transition-transform duration-200">
-              <Shield className="w-7 h-7 text-red-600" />
-            </div>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className="flex items-center space-x-3 group"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="High Skill Taekwondo Academy logo"
+              className="h-12 w-12 object-contain"
+            />
             <div>
-              <span className="block text-xl sm:text-2xl font-extrabold text-neutral-950 tracking-tight leading-none group-hover:text-red-600 transition-colors">
-                HIGH SKILL
-              </span>
+            
               <span className="block text-[10px] sm:text-xs uppercase tracking-widest font-bold text-red-600 mt-1">
                 Taekwondo Academy
               </span>
@@ -78,8 +81,8 @@ export const Navbar: React.FC = () => {
                   to={link.path}
                   className={`px-3 py-2 text-sm font-semibold rounded-lg transition-all duration-200 relative ${
                     isActive
-                      ? 'text-red-600 bg-red-50/80 font-bold'
-                      : 'text-neutral-700 hover:text-red-600 hover:bg-neutral-50'
+                      ? "text-red-600 bg-red-50/80 font-bold"
+                      : "text-neutral-700 hover:text-red-600 hover:bg-neutral-50"
                   }`}
                 >
                   {link.name}
@@ -116,7 +119,11 @@ export const Navbar: React.FC = () => {
               className="p-2.5 rounded-lg text-neutral-700 hover:text-red-600 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-red-600"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -135,15 +142,15 @@ export const Navbar: React.FC = () => {
                   onClick={closeMenu}
                   className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
                     isActive
-                      ? 'text-red-600 bg-red-50 font-bold border-l-4 border-red-600'
-                      : 'text-neutral-800 hover:bg-neutral-100 hover:text-red-600'
+                      ? "text-red-600 bg-red-50 font-bold border-l-4 border-red-600"
+                      : "text-neutral-800 hover:bg-neutral-100 hover:text-red-600"
                   }`}
                 >
                   {link.name}
                 </Link>
               );
             })}
-            
+
             <div className="pt-4 mt-2 border-t border-neutral-100 space-y-2.5">
               <Link
                 to="/book-trial"
