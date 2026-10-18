@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  MessageSquare, 
-  Send, 
-  CheckCircle2, 
-  AlertCircle, 
-  Loader2, 
-  ChevronDown, 
+import React, { useState } from "react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageSquare,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Loader2,
+  ChevronDown,
   HelpCircle,
-  ShieldCheck
-} from 'lucide-react';
-import { apiService, ContactPayload } from '../services/api';
-import { ACADEMY_INFO, FAQS } from '../data/academyData';
+  ShieldCheck,
+} from "lucide-react";
+import { apiService, ContactPayload } from "../services/api";
+import { ACADEMY_INFO, FAQS } from "../data/academyData";
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactPayload>({
-    fullName: '',
-    phone: '',
-    email: '',
-    subject: 'General Inquiry / Membership Question',
-    message: '',
+    fullName: "",
+    phone: "",
+    email: "",
+    subject: "General Inquiry / Membership Question",
+    message: "",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -35,25 +35,25 @@ export const Contact: React.FC = () => {
     const errs: Record<string, string> = {};
 
     if (!formData.fullName.trim() || formData.fullName.trim().length < 2) {
-      errs.fullName = 'Please enter your full name (at least 2 characters).';
+      errs.fullName = "Please enter your full name (at least 2 characters).";
     }
 
     const phoneRegex = /^[\d\s\+\-\(\)]{7,20}$/;
     if (!formData.phone.trim() || !phoneRegex.test(formData.phone.trim())) {
-      errs.phone = 'Please enter a valid contact phone number.';
+      errs.phone = "Please enter a valid contact phone number.";
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      errs.email = 'Please enter a valid email address.';
+      errs.email = "Please enter a valid email address.";
     }
 
     if (!formData.subject.trim()) {
-      errs.subject = 'Subject is required.';
+      errs.subject = "Subject is required.";
     }
 
     if (!formData.message.trim() || formData.message.trim().length < 5) {
-      errs.message = 'Please enter a message (at least 5 characters).';
+      errs.message = "Please enter a message (at least 5 characters).";
     }
 
     setErrors(errs);
@@ -61,12 +61,14 @@ export const Contact: React.FC = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
     if (serverError) setServerError(null);
   };
@@ -83,10 +85,12 @@ export const Contact: React.FC = () => {
       if (res.success) {
         setIsSuccess(true);
       } else {
-        setServerError(res.message || 'Failed to send message. Please try again.');
+        setServerError(
+          res.message || "Failed to send message. Please try again.",
+        );
       }
     } catch (err: any) {
-      setServerError(err.message || 'Unable to connect to academy server.');
+      setServerError(err.message || "Unable to connect to academy server.");
     } finally {
       setIsSubmitting(false);
     }
@@ -94,11 +98,11 @@ export const Contact: React.FC = () => {
 
   const resetForm = () => {
     setFormData({
-      fullName: '',
-      phone: '',
-      email: '',
-      subject: 'General Inquiry / Membership Question',
-      message: '',
+      fullName: "",
+      phone: "",
+      email: "",
+      subject: "General Inquiry / Membership Question",
+      message: "",
     });
     setErrors({});
     setIsSuccess(false);
@@ -111,7 +115,6 @@ export const Contact: React.FC = () => {
   return (
     <div className="bg-neutral-50 min-h-screen py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full uppercase tracking-wider mb-3">
@@ -122,16 +125,15 @@ export const Contact: React.FC = () => {
             Contact High Skill Taekwondo
           </h1>
           <p className="text-neutral-600 mt-3 text-base sm:text-lg">
-            Have questions about our belt curriculum, age programs, or schedule? Send us a message, visit our dojang, or chat directly via WhatsApp.
+            Have questions about our belt curriculum, age programs, or schedule?
+            Send us a message, visit our dojang, or chat directly via WhatsApp.
           </p>
         </div>
 
         {/* Contact Info Cards & Form Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
           {/* Left Column: Academy Details */}
           <div className="lg:col-span-5 space-y-6">
-            
             {/* Quick Contact Card */}
             <div className="bg-white rounded-2xl shadow-md border border-neutral-200 p-6 sm:p-8 space-y-6">
               <h2 className="text-xl font-bold text-neutral-900 pb-3 border-b border-neutral-100 flex items-center space-x-2">
@@ -145,9 +147,15 @@ export const Contact: React.FC = () => {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">Academy Location</h3>
-                    <p className="text-neutral-900 font-semibold text-sm mt-0.5">{ACADEMY_INFO.address}</p>
-                    <p className="text-neutral-600 text-xs">{ACADEMY_INFO.cityStateZip}</p>
+                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">
+                      Academy Location
+                    </h3>
+                    <p className="text-neutral-900 font-semibold text-sm mt-0.5">
+                      {ACADEMY_INFO.address}
+                    </p>
+                    <p className="text-neutral-600 text-xs">
+                      {ACADEMY_INFO.cityStateZip}
+                    </p>
                   </div>
                 </div>
 
@@ -156,11 +164,18 @@ export const Contact: React.FC = () => {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">Phone Call</h3>
-                    <a href={`tel:${ACADEMY_INFO.phone}`} className="text-neutral-900 font-semibold text-sm mt-0.5 hover:text-red-600 transition-colors block">
+                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">
+                      Phone Call
+                    </h3>
+                    <a
+                      href={`tel:${ACADEMY_INFO.phone}`}
+                      className="text-neutral-900 font-semibold text-sm mt-0.5 hover:text-red-600 transition-colors block"
+                    >
                       {ACADEMY_INFO.phoneDisplay}
                     </a>
-                    <p className="text-neutral-500 text-xs">Direct line to front desk & coaches</p>
+                    <p className="text-neutral-500 text-xs">
+                      Direct line to front desk & coaches
+                    </p>
                   </div>
                 </div>
 
@@ -169,11 +184,18 @@ export const Contact: React.FC = () => {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">Email Support</h3>
-                    <a href={`mailto:${ACADEMY_INFO.email}`} className="text-neutral-900 font-semibold text-sm mt-0.5 hover:text-red-600 transition-colors block">
+                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">
+                      Email Support
+                    </h3>
+                    <a
+                      href={`mailto:${ACADEMY_INFO.email}`}
+                      className="text-neutral-900 font-semibold text-sm mt-0.5 hover:text-red-600 transition-colors block"
+                    >
                       {ACADEMY_INFO.email}
                     </a>
-                    <p className="text-neutral-500 text-xs">Responses within 24 hours</p>
+                    <p className="text-neutral-500 text-xs">
+                      Responses within 24 hours
+                    </p>
                   </div>
                 </div>
 
@@ -182,10 +204,30 @@ export const Contact: React.FC = () => {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">Training Hours</h3>
-                    <p className="text-neutral-900 text-xs font-semibold mt-0.5">{ACADEMY_INFO.operatingHours.weekdays}</p>
-                    <p className="text-neutral-900 text-xs font-semibold">{ACADEMY_INFO.operatingHours.saturday}</p>
-                    <p className="text-neutral-500 text-xs">{ACADEMY_INFO.operatingHours.sunday}</p>
+                    <h3 className="text-xs font-bold uppercase text-neutral-500 tracking-wider">
+                      Training Hours
+                    </h3>
+
+                    <p className="text-neutral-900 text-sm font-bold mt-1">
+                      Monday – Friday (Morning)
+                    </p>
+                    <p className="text-neutral-600 text-xs whitespace-pre-line mb-2">
+                      {ACADEMY_INFO.operatingHours.weekdays}
+                    </p>
+
+                    <p className="text-neutral-900 text-sm font-bold">
+                      Monday – Friday (Evening)
+                    </p>
+                    <p className="text-neutral-600 text-xs whitespace-pre-line mb-2">
+                      {ACADEMY_INFO.operatingHours.saturday}
+                    </p>
+
+                    <p className="text-neutral-900 text-sm font-bold">
+                      Saturday & Sunday
+                    </p>
+                    <p className="text-neutral-500 text-xs">
+                      {ACADEMY_INFO.operatingHours.sunday}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -208,13 +250,16 @@ export const Contact: React.FC = () => {
             <div className="bg-neutral-900 text-white rounded-2xl p-6 border border-neutral-800 space-y-3">
               <div className="flex items-center space-x-3">
                 <ShieldCheck className="w-6 h-6 text-red-500" />
-                <h3 className="font-bold text-white text-base">Certified & Sanctioned</h3>
+                <h3 className="font-bold text-white text-base">
+                  Certified & Sanctioned
+                </h3>
               </div>
               <p className="text-xs text-neutral-300 leading-relaxed">
-                All belt promotions and curriculum at High Skill Taekwondo Academy strictly adhere to the global regulations of Kukkiwon World Taekwondo Headquarters.
+                All belt promotions and curriculum at High Skill Taekwondo
+                Academy strictly adhere to the global regulations of Kukkiwon
+                World Taekwondo Headquarters.
               </p>
             </div>
-
           </div>
 
           {/* Right Column: Contact Form */}
@@ -227,9 +272,16 @@ export const Contact: React.FC = () => {
                   <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-extrabold text-neutral-900 mb-2">Message Delivered!</h3>
+                  <h3 className="text-2xl font-extrabold text-neutral-900 mb-2">
+                    Message Delivered!
+                  </h3>
                   <p className="text-neutral-600 max-w-md mx-auto text-sm sm:text-base mb-6">
-                    Thank you, <strong className="text-neutral-900">{formData.fullName}</strong>. Your inquiry has been routed to our academy team. We will reach back via phone or email shortly.
+                    Thank you,{" "}
+                    <strong className="text-neutral-900">
+                      {formData.fullName}
+                    </strong>
+                    . Your inquiry has been routed to our academy team. We will
+                    reach back via phone or email shortly.
                   </p>
                   <button
                     onClick={resetForm}
@@ -241,9 +293,12 @@ export const Contact: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="p-6 sm:p-10 space-y-6">
                   <div>
-                    <h2 className="text-xl font-extrabold text-neutral-900">Send Us a Direct Message</h2>
+                    <h2 className="text-xl font-extrabold text-neutral-900">
+                      Send Us a Direct Message
+                    </h2>
                     <p className="text-neutral-500 text-xs sm:text-sm mt-1">
-                      Fill out the form below and an instructor will respond promptly.
+                      Fill out the form below and an instructor will respond
+                      promptly.
                     </p>
                   </div>
 
@@ -271,12 +326,14 @@ export const Contact: React.FC = () => {
                         placeholder="e.g. Michael Chen"
                         className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors ${
                           errors.fullName
-                            ? 'border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400'
-                            : 'border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100'
+                            ? "border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400"
+                            : "border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100"
                         }`}
                       />
                       {errors.fullName && (
-                        <p className="text-xs text-red-600 mt-1">{errors.fullName}</p>
+                        <p className="text-xs text-red-600 mt-1">
+                          {errors.fullName}
+                        </p>
                       )}
                     </div>
 
@@ -293,12 +350,14 @@ export const Contact: React.FC = () => {
                         placeholder="e.g. (555) 456-7890"
                         className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors ${
                           errors.phone
-                            ? 'border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400'
-                            : 'border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100'
+                            ? "border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400"
+                            : "border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100"
                         }`}
                       />
                       {errors.phone && (
-                        <p className="text-xs text-red-600 mt-1">{errors.phone}</p>
+                        <p className="text-xs text-red-600 mt-1">
+                          {errors.phone}
+                        </p>
                       )}
                     </div>
 
@@ -315,12 +374,14 @@ export const Contact: React.FC = () => {
                         placeholder="e.g. name@example.com"
                         className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors ${
                           errors.email
-                            ? 'border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400'
-                            : 'border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100'
+                            ? "border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400"
+                            : "border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100"
                         }`}
                       />
                       {errors.email && (
-                        <p className="text-xs text-red-600 mt-1">{errors.email}</p>
+                        <p className="text-xs text-red-600 mt-1">
+                          {errors.email}
+                        </p>
                       )}
                     </div>
 
@@ -335,11 +396,21 @@ export const Contact: React.FC = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl border border-neutral-300 text-sm focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 bg-white"
                       >
-                        <option value="General Inquiry / Membership Question">General Inquiry / Membership Question</option>
-                        <option value="Kids & Little Tigers Program Question">Kids & Little Tigers Program Question</option>
-                        <option value="Olympic Sparring & Tournament Team">Olympic Sparring & Tournament Team</option>
-                        <option value="Adult Fitness & Self Defense">Adult Fitness & Self Defense</option>
-                        <option value="Tuition & Schedule Inquiries">Tuition & Schedule Inquiries</option>
+                        <option value="General Inquiry / Membership Question">
+                          General Inquiry / Membership Question
+                        </option>
+                        <option value="Kids & Little Tigers Program Question">
+                          Kids & Little Tigers Program Question
+                        </option>
+                        <option value="Olympic Sparring & Tournament Team">
+                          Olympic Sparring & Tournament Team
+                        </option>
+                        <option value="Adult Fitness & Self Defense">
+                          Adult Fitness & Self Defense
+                        </option>
+                        <option value="Tuition & Schedule Inquiries">
+                          Tuition & Schedule Inquiries
+                        </option>
                       </select>
                     </div>
 
@@ -356,12 +427,14 @@ export const Contact: React.FC = () => {
                         placeholder="How can we assist you with your martial arts goals?"
                         className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none transition-colors ${
                           errors.message
-                            ? 'border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400'
-                            : 'border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100'
+                            ? "border-red-500 bg-red-50/30 focus:ring-2 focus:ring-red-400"
+                            : "border-neutral-300 focus:border-red-600 focus:ring-2 focus:ring-red-100"
                         }`}
                       />
                       {errors.message && (
-                        <p className="text-xs text-red-600 mt-1">{errors.message}</p>
+                        <p className="text-xs text-red-600 mt-1">
+                          {errors.message}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -390,7 +463,6 @@ export const Contact: React.FC = () => {
               )}
             </div>
           </div>
-
         </div>
 
         {/* FAQ Section */}
@@ -400,7 +472,8 @@ export const Contact: React.FC = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-neutral-600 text-sm mt-2">
-              Common questions answered about joining High Skill Taekwondo Academy.
+              Common questions answered about joining High Skill Taekwondo
+              Academy.
             </p>
           </div>
 
@@ -422,7 +495,7 @@ export const Contact: React.FC = () => {
                     </span>
                     <ChevronDown
                       className={`w-5 h-5 text-neutral-400 transition-transform duration-200 flex-shrink-0 ${
-                        isOpen ? 'transform rotate-180 text-red-600' : ''
+                        isOpen ? "transform rotate-180 text-red-600" : ""
                       }`}
                     />
                   </button>
@@ -436,7 +509,6 @@ export const Contact: React.FC = () => {
             })}
           </div>
         </div>
-
       </div>
     </div>
   );

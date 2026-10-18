@@ -176,28 +176,29 @@ export interface Coach {
 
 export const COACHES: Coach[] = [
   {
-    name: "[Head Instructor Name]",
+    name: "COACH HARSH GURUNG",
     role: "Founder & Head Master",
     rank: "6th Dan Black Belt (Kukkiwon)",
     bio: "With over 20 years of martial arts dedication, Master Instructor brings passionate leadership, World Taekwondo certification, and an unwavering commitment to mentoring students of every age to achieve their highest physical and mental potential.",
     certifications: [
-      "Kukkiwon International Master Instructor License",
-      "World Taekwondo (WT) Certified Coach",
-      "Certified First Aid & CPR Specialist",
-      "Former State Champion & Tournament Coach"
+      "World Championship Participant",
+      "Asian Championship Participant",
+      "NSNIS Certificate Course Qualified",
+      "Specialized in Poomsae & Freestyle Taekwondo",
+      "Demonstration & Advanced Skills Training"
     ],
     image: "/images/coach/head-coach.svg",
   },
   {
-    name: "[Senior Instructor Name]",
-    role: "Senior Instructor & Sparring Coach",
-    rank: "4th Dan Black Belt (Kukkiwon)",
-    bio: "Specializing in Olympic sparring tactics, youth development, and athletic agility conditioning. Committed to building unbreakable student self-confidence in a structured, inspiring environment.",
+    name: "[Zumba Fitness Instructor name]",
+    role: "Zumba Fitness Instructor",
+    rank: "Certified Zumba Instructor",
+    bio: "Brings high-energy dance fitness to our academy. Classes are fun, beginner friendly, and designed to improve stamina, flexibility, and coordination while burning calories. Open to ladies, teens, and adults of every fitness level.",
     certifications: [
-      "Kukkiwon Certified 4th Dan Black Belt",
-      "National Sparring Referee Certification",
-      "Youth Athletic Development Coach",
-      "Poomsae Technical Specialist"
+      "Zumba Certified Instructor",
+      "Dance Fitness & Cardio Specialist",
+      "Beginner Friendly Group Classes",
+      "Stamina, Weight Loss & Flexibility Training"
     ],
     image: "/images/coach/assistant-coach.svg",
   },

@@ -1,6 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Shield, Award, ChevronRight, CheckCircle2, Sparkles } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Shield,
+  Award,
+  ChevronRight,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 
 interface HeroProps {
   onOpenTrial?: () => void;
@@ -12,11 +18,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
       {/* Background with Dark Martial Arts Theme & Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/home/hero-bg.svg"
+          src={`${import.meta.env.BASE_URL}images/home/abhi.jpeg`}
           alt="High Skill Taekwondo Training Dojang"
-          className="w-full h-full object-cover object-center opacity-30 transform scale-105"
+          className="w-full h-full object-cover object-center opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-red-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-neutral-950/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent" />
       </div>
 
@@ -25,10 +31,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
           {/* Main Hero Copy */}
           <div className="lg:col-span-8 space-y-6">
-            
             {/* Trust Badge */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-red-950/80 border border-red-600/50 text-red-200 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
               <Sparkles className="w-3.5 h-3.5 text-red-400" />
@@ -38,12 +42,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
               DISCIPLINE • FOCUS <br />
-              <span className="text-red-600 drop-shadow-sm">HIGH SKILL</span> TAEKWONDO
+              <span className="text-red-600 drop-shadow-sm">
+                HIGH SKILL
+              </span>{" "}
+              TAEKWONDO
             </h1>
 
             {/* Subtext */}
             <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl leading-relaxed">
-              Empowering students of all ages through authentic martial arts training. Build rock-solid confidence, physical fitness, practical self-defense, and championship character.
+              Empowering students of all ages through authentic martial arts
+              training. Build rock-solid confidence, physical fitness, practical
+              self-defense, and championship character.
             </p>
 
             {/* Feature Checkmarks */}
@@ -91,7 +100,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 <span>View Class Schedule &rarr;</span>
               </Link>
             </div>
-
           </div>
 
           {/* Quick Highlight Card */}
@@ -103,8 +111,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                     <Shield className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white text-base">High Skill Dojo</h3>
-                    <p className="text-xs text-neutral-400">Excellence in Martial Arts</p>
+                    <h3 className="font-bold text-white text-base">
+                      High Skill Dojo
+                    </h3>
+                    <p className="text-xs text-neutral-400">
+                      Excellence in Martial Arts
+                    </p>
                   </div>
                 </div>
                 <span className="text-xs font-semibold px-2.5 py-1 bg-neutral-800 text-red-400 rounded-md border border-neutral-700">
@@ -116,16 +128,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 <div className="bg-neutral-950 p-4 rounded-xl border border-neutral-800/80">
                   <div className="flex items-center justify-between text-xs text-neutral-400 mb-1">
                     <span>NEXT TRIAL SESSION</span>
-                    <span className="text-emerald-400 font-medium">Spots Open</span>
+                    <span className="text-emerald-400 font-medium">
+                      Spots Open
+                    </span>
                   </div>
-                  <p className="font-semibold text-white">This Saturday @ 10:00 AM</p>
-                  <p className="text-xs text-neutral-400 mt-1">Beginners welcome. Uniform provided upon enrollment.</p>
+                  <p className="font-semibold text-white">
+                    This Saturday @ 10:00 AM
+                  </p>
+                  <p className="text-xs text-neutral-400 mt-1">
+                    Beginners welcome. Uniform provided upon enrollment.
+                  </p>
                 </div>
 
                 <div className="flex items-center space-x-3 p-3 bg-red-950/40 border border-red-900/40 rounded-xl">
                   <Award className="w-5 h-5 text-red-500 flex-shrink-0" />
                   <p className="text-xs text-neutral-300">
-                    <strong className="text-white">100% Certified:</strong> All Dan rankings directly registered with Kukkiwon Headquarters.
+                    <strong className="text-white">100% Certified:</strong> All
+                    Dan rankings directly registered with Kukkiwon Headquarters.
                   </p>
                 </div>
               </div>
@@ -138,29 +157,43 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               </Link>
             </div>
           </div>
-
         </div>
 
         {/* Stats Strip */}
         <div className="mt-16 pt-10 border-t border-neutral-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="p-4 bg-neutral-900/40 rounded-xl border border-neutral-800/50">
-            <span className="block text-3xl sm:text-4xl font-extrabold text-white">100+</span>
-            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">Black Belts Certified</span>
+            <span className="block text-3xl sm:text-4xl font-extrabold text-white">
+              100+
+            </span>
+            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">
+              Black Belts Certified
+            </span>
           </div>
           <div className="p-4 bg-neutral-900/40 rounded-xl border border-neutral-800/50">
-            <span className="block text-3xl sm:text-4xl font-extrabold text-red-500">20+</span>
-            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">Years of Dedication</span>
+            <span className="block text-3xl sm:text-4xl font-extrabold text-red-500">
+              20+
+            </span>
+            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">
+              Years of Dedication
+            </span>
           </div>
           <div className="p-4 bg-neutral-900/40 rounded-xl border border-neutral-800/50">
-            <span className="block text-3xl sm:text-4xl font-extrabold text-white">4 to 65+</span>
-            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">Ages Welcomed</span>
+            <span className="block text-3xl sm:text-4xl font-extrabold text-white">
+              4 to 65+
+            </span>
+            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">
+              Ages Welcomed
+            </span>
           </div>
           <div className="p-4 bg-neutral-900/40 rounded-xl border border-neutral-800/50">
-            <span className="block text-3xl sm:text-4xl font-extrabold text-red-500">5-Star</span>
-            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">Family Atmosphere</span>
+            <span className="block text-3xl sm:text-4xl font-extrabold text-red-500">
+              5-Star
+            </span>
+            <span className="text-xs sm:text-sm text-neutral-400 uppercase tracking-wider font-medium mt-1 block">
+              Family Atmosphere
+            </span>
           </div>
         </div>
-
       </div>
     </section>
   );
