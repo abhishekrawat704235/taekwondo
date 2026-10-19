@@ -215,8 +215,8 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-neutral-200">
                 <img
-                  src="/images/home/training-feature.svg"
-                  alt="Students training at High Skill Academy"
+                  src="public/images/home/8.jpeg"
+                  alt="High Skill Taekwondo Academy Dojang"
                   className="w-full h-full object-cover"
                 />
               </div>

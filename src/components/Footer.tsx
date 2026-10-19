@@ -40,9 +40,7 @@ export const Footer: React.FC = () => {
                 
               </div>
               <div>
-                <span className="block text-xl font-extrabold text-white tracking-tight">
-                  HIGH SKILL
-                </span>
+                
                 <span className="block text-xs uppercase tracking-widest text-red-500 font-semibold">
                   Taekwondo Academy
                 </span>

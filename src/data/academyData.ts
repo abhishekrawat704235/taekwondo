@@ -78,7 +78,7 @@ export const PROGRAMS: Program[] = [
       "Fun, high-energy games with structured etiquette"
     ],
     scheduleSnippet: "Mon, Wed, Fri: 4:15 PM – 5:00 PM",
-    image: "/images/home/kids-feature.svg",
+    image: "public/images/home/kid.png",
     badgeColor: "bg-amber-100 text-amber-800 border-amber-300",
   },
   {
@@ -94,7 +94,7 @@ export const PROGRAMS: Program[] = [
       "Character development and academic discipline"
     ],
     scheduleSnippet: "Mon – Fri: 5:15 PM – 6:15 PM | Sat: 10:00 AM",
-    image: "/images/home/training-feature.svg",
+    image: "public/images/home/3.png",
     badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
   },
   {
@@ -110,7 +110,7 @@ export const PROGRAMS: Program[] = [
       "Traditional Poomsae forms and belt advancement"
     ],
     scheduleSnippet: "Mon, Wed, Thu: 6:30 PM – 7:45 PM | Sat: 11:15 AM",
-    image: "/images/home/poomsae-feature.svg",
+    image: "public/images/home/4.png",
     badgeColor: "bg-red-100 text-red-800 border-red-300",
   },
   {
@@ -126,7 +126,7 @@ export const PROGRAMS: Program[] = [
       "Junior leadership & assistant instructor pathway"
     ],
     scheduleSnippet: "Tue & Thu: 7:45 PM – 9:00 PM | Sat: 1:00 PM",
-    image: "/images/home/hero-bg.svg",
+    image: "public/images/home/7.png",
     badgeColor: "bg-neutral-900 text-neutral-100 border-neutral-700",
   },
 ];
@@ -218,7 +218,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "High Flying Roundhouse Drill",
     category: "Training",
     description: "Students practicing explosive jump kicks with target pads under instructor guidance.",
-    image: "/images/gallery/gallery-1.svg",
+    image: "public /images/gallery/highfly.png",
   },
   {
     id: 2,
