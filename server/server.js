@@ -67,6 +67,15 @@ app.listen(PORT, () => {
   console.log(`📍 Listening on port: http://localhost:${PORT}`);
   console.log(`🛡️  Admin Dashboard Auth: Username "${process.env.ADMIN_USERNAME || 'admin'}"`);
   console.log(`======================================================\n`);
+  console.log(`📂 Serving static files from: ${distPath}`)
+  console.log(`📡 API Endpoints:`
+  
+
+  );
 });
+
+
+
+
 
 export default app;

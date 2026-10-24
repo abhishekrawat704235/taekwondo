@@ -163,6 +163,8 @@ export const TAEKWONDO_TENETS: Tenet[] = [
     english: "Indomitable Spirit",
     description: "Courage to stand up for justice and face fears without hesitation or defeatist mindset.",
   },
+
+ 
 ];
 
 export interface Coach {
@@ -200,7 +202,7 @@ export const COACHES: Coach[] = [
       "Beginner Friendly Group Classes",
       "Stamina, Weight Loss & Flexibility Training"
     ],
-    image: "/images/coach/assistant-coach.svg",
+    image: "public /images/coach/assistant-coach.svg",
   },
 ];
 

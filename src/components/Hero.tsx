@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
       {/* Background with Dark Martial Arts Theme & Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/home/abhi.jpeg`}
+          src={`${import.meta.env.BASE_URL}images/home/forntbg.png`}
           alt="High Skill Taekwondo Training Dojang"
           className="w-full h-full object-cover object-center opacity-40"
         />

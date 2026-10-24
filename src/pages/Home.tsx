@@ -1,21 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Shield, 
-  Award, 
-  Users, 
-  ChevronRight, 
-  Star, 
-  CheckCircle, 
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Shield,
+  Award,
+  Users,
+  ChevronRight,
+  Star,
+  CheckCircle,
   ArrowRight,
-  Camera
-} from 'lucide-react';
-import { Hero } from '../components/Hero';
-import { 
-  PROGRAMS, 
-  TAEKWONDO_TENETS, 
-  GALLERY_ITEMS 
-} from '../data/academyData';
+  Camera,
+} from "lucide-react";
+import { Hero } from "../components/Hero";
+import { PROGRAMS, TAEKWONDO_TENETS, GALLERY_ITEMS } from "../data/academyData";
 
 export const Home: React.FC = () => {
   return (
@@ -24,7 +20,15 @@ export const Home: React.FC = () => {
       <Hero />
 
       {/* 2. Taekwondo Five Tenets Section */}
-      <section className="bg-neutral-900 text-white py-14 border-y-2 border-red-600">
+      <section
+        className="bg-neutral-900 text-white py-14 border-y-2 border-red-600"
+        style={{
+          backgroundImage: "url('public/images/home/front3.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-red-500 font-bold uppercase tracking-widest text-xs">
@@ -34,7 +38,8 @@ export const Home: React.FC = () => {
               The Five Tenets of Taekwondo
             </h2>
             <p className="text-neutral-400 text-xs sm:text-sm mt-2">
-              Every lesson at High Skill Academy instills these character foundations both inside the dojang and throughout everyday life.
+              Every lesson at High Skill Academy instills these character
+              foundations both inside the dojang and throughout everyday life.
             </p>
           </div>
 
@@ -47,8 +52,12 @@ export const Home: React.FC = () => {
                 <div className="w-8 h-8 rounded-lg bg-red-600/20 text-red-500 flex items-center justify-center font-bold text-sm mb-3 group-hover:bg-red-600 group-hover:text-white transition-colors">
                   {idx + 1}
                 </div>
-                <h3 className="font-extrabold text-base text-white">{tenet.english}</h3>
-                <p className="text-xs font-mono text-red-400 mt-0.5">{tenet.korean}</p>
+                <h3 className="font-extrabold text-base text-white">
+                  {tenet.english}
+                </h3>
+                <p className="text-xs font-mono text-red-400 mt-0.5">
+                  {tenet.korean}
+                </p>
                 <p className="text-xs text-neutral-400 mt-2.5 leading-relaxed">
                   {tenet.description}
                 </p>
@@ -70,7 +79,8 @@ export const Home: React.FC = () => {
               Programs For Every Age & Skill Level
             </h2>
             <p className="text-neutral-600 mt-3 text-base sm:text-lg">
-              Structured step-by-step curriculum designed to build strength, agility, self-defense, and razor-sharp concentration.
+              Structured step-by-step curriculum designed to build strength,
+              agility, self-defense, and razor-sharp concentration.
             </p>
           </div>
 
@@ -88,7 +98,9 @@ export const Home: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3">
-                    <span className={`px-2.5 py-1 text-xs font-bold rounded-md border ${program.badgeColor}`}>
+                    <span
+                      className={`px-2.5 py-1 text-xs font-bold rounded-md border ${program.badgeColor}`}
+                    >
                       {program.ageGroup}
                     </span>
                   </div>
@@ -106,7 +118,10 @@ export const Home: React.FC = () => {
 
                     <div className="mt-4 pt-4 border-t border-neutral-100 space-y-2">
                       {program.highlights.slice(0, 3).map((item, i) => (
-                        <div key={i} className="flex items-start space-x-2 text-xs text-neutral-600">
+                        <div
+                          key={i}
+                          className="flex items-start space-x-2 text-xs text-neutral-600"
+                        >
                           <CheckCircle className="w-3.5 h-3.5 text-red-600 flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </div>
@@ -150,7 +165,6 @@ export const Home: React.FC = () => {
       <section className="py-20 bg-white border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
             <div className="lg:col-span-6 space-y-6">
               <span className="text-red-600 font-bold uppercase tracking-wider text-xs">
                 The High Skill Standard
@@ -159,7 +173,9 @@ export const Home: React.FC = () => {
                 More Than Just Kicking & Punching. We Build Resilient Leaders.
               </h2>
               <p className="text-neutral-600 leading-relaxed text-sm sm:text-base">
-                Founded on the time-tested discipline of Korean martial arts, High Skill Taekwondo Academy offers a safe, motivating dojang where every student is mentored by licensed masters.
+                Founded on the time-tested discipline of Korean martial arts,
+                High Skill Taekwondo Academy offers a safe, motivating dojang
+                where every student is mentored by licensed masters.
               </p>
 
               <div className="space-y-4 pt-2">
@@ -168,8 +184,13 @@ export const Home: React.FC = () => {
                     <Shield className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-neutral-900 text-sm">Safety-First Training Facility</h4>
-                    <p className="text-xs text-neutral-600 mt-0.5">High-impact shock absorbing mats, premium protective body armor, and sanitized training pads.</p>
+                    <h4 className="font-bold text-neutral-900 text-sm">
+                      Safety-First Training Facility
+                    </h4>
+                    <p className="text-xs text-neutral-600 mt-0.5">
+                      High-impact shock absorbing mats, premium protective body
+                      armor, and sanitized training pads.
+                    </p>
                   </div>
                 </div>
 
@@ -178,8 +199,13 @@ export const Home: React.FC = () => {
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-neutral-900 text-sm">Internationally Certified Dan Belts</h4>
-                    <p className="text-xs text-neutral-600 mt-0.5">Our Black Belt certificates are officially recognized worldwide by Kukkiwon World Taekwondo Headquarters.</p>
+                    <h4 className="font-bold text-neutral-900 text-sm">
+                      Internationally Certified Dan Belts
+                    </h4>
+                    <p className="text-xs text-neutral-600 mt-0.5">
+                      Our Black Belt certificates are officially recognized
+                      worldwide by Kukkiwon World Taekwondo Headquarters.
+                    </p>
                   </div>
                 </div>
 
@@ -188,8 +214,13 @@ export const Home: React.FC = () => {
                     <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-neutral-900 text-sm">Anti-Bullying & Respect</h4>
-                    <p className="text-xs text-neutral-600 mt-0.5">Students learn de-escalation, self-confidence, posture, and verbal assertiveness to handle bullying peacefully.</p>
+                    <h4 className="font-bold text-neutral-900 text-sm">
+                      Anti-Bullying & Respect
+                    </h4>
+                    <p className="text-xs text-neutral-600 mt-0.5">
+                      Students learn de-escalation, self-confidence, posture,
+                      and verbal assertiveness to handle bullying peacefully.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -215,9 +246,8 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-neutral-200">
                 <img
-                  src="public/images/home/8.jpeg"
-                  alt="High Skill Taekwondo Academy Dojang"
-                  className="w-full h-full object-cover"
+                  src={`${import.meta.env.BASE_URL}images/home/8.png`}
+                  alt="Taekwondo Academy"
                 />
               </div>
               {/* Floating Quote Card */}
@@ -228,18 +258,28 @@ export const Home: React.FC = () => {
                   ))}
                 </div>
                 <p className="text-xs text-neutral-300 italic">
-                  "High Skill Academy transformed our son's focus and confidence. The masters lead with patience and respect."
+                  "High Skill Academy transformed our son's focus and
+                  confidence. The masters lead with patience and respect."
                 </p>
-                <span className="block text-[11px] text-red-400 font-semibold mt-2">— Academy Parent Feedback</span>
+                <span className="block text-[11px] text-red-400 font-semibold mt-2">
+                  — Academy Parent Feedback
+                </span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* 5. Photo Gallery Showcase Preview */}
-      <section className="py-20 bg-neutral-950 text-white">
+      <section
+        className="py-20 bg-neutral-950 text-white"
+        style={{
+          backgroundImage: "url('public/images/home/front4.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
@@ -250,7 +290,8 @@ export const Home: React.FC = () => {
                 Academy Photo Highlights
               </h2>
               <p className="text-neutral-400 text-sm mt-1">
-                A glimpse into our sparring sessions, promotions, and junior drills.
+                A glimpse into our sparring sessions, promotions, and junior
+                drills.
               </p>
             </div>
             <Link
@@ -301,7 +342,8 @@ export const Home: React.FC = () => {
                 Ready To Experience High Skill Taekwondo?
               </h2>
               <p className="text-red-100 text-sm sm:text-base leading-relaxed">
-                Take the first step. Sign up for a free, zero-obligation trial session or complete your full student registration online today!
+                Take the first step. Sign up for a free, zero-obligation trial
+                session or complete your full student registration online today!
               </p>
             </div>
 
