@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
       <section
         className="bg-neutral-900 text-white py-14 border-y-2 border-red-600"
         style={{
-          backgroundImage: "url('public/images/home/front3.png')",
+          backgroundImage: "url('public/images/homes/front3.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -246,7 +246,7 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-neutral-200">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/home/8.png`}
+                  src={`${import.meta.env.BASE_URL}images/homes/8.png`}
                   alt="Taekwondo Academy"
                 />
               </div>
@@ -274,7 +274,7 @@ export const Home: React.FC = () => {
       <section
         className="py-20 bg-neutral-950 text-white"
         style={{
-          backgroundImage: "url('public/images/home/front4.png')",
+          backgroundImage: "url('public/images/homes/front4.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
