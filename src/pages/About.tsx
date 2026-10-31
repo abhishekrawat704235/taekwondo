@@ -42,11 +42,10 @@ export const About: React.FC = () => {
       {/* 1. Header Banner */}
       <section className="bg-neutral-900 text-white py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <img
-            src={`${import.meta.env.BASE_URL}images/1.png`}
-            alt="Taekwondo Background"
-            className="w-full h-full object-cover object-center"
-          />
+          <div
+            className="w-full h-full bg-cover bg-center" >
+              <img src="/taekwondo/images/about/1.png" alt="Traditional Taekwondo Poomsae" className="w-full h-full object-cover"/>
+          </div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center space-x-2 px-3 py-1 bg-red-950 border border-red-600/50 text-red-400 text-xs font-bold rounded-full uppercase tracking-wider mb-4">
@@ -113,8 +112,7 @@ export const About: React.FC = () => {
 
             <div className="lg:col-span-6">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white ring-1 ring-neutral-200">
-                <img
-                  src="/images/home/1.png"
+                <img src="/taekwondo/images/homes/8.jpeg"
                   alt="Traditional Taekwondo Poomsae"
                   className="w-full h-full object-cover"
                 />

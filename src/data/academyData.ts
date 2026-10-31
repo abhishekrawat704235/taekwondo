@@ -78,7 +78,7 @@ export const PROGRAMS: Program[] = [
       "Fun, high-energy games with structured etiquette"
     ],
     scheduleSnippet: "Mon, Wed, Fri: 4:15 PM – 5:00 PM",
-    image: "public/images/home/kid.png",
+    image: "/taekwondo/images/homes/kid.png",
     badgeColor: "bg-amber-100 text-amber-800 border-amber-300",
   },
   {
@@ -94,7 +94,7 @@ export const PROGRAMS: Program[] = [
       "Character development and academic discipline"
     ],
     scheduleSnippet: "Mon – Fri: 5:15 PM – 6:15 PM | Sat: 10:00 AM",
-    image: "public/images/home/3.png",
+    image: "/taekwondo/images/homes/3.png",
     badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
   },
   {
@@ -110,7 +110,7 @@ export const PROGRAMS: Program[] = [
       "Traditional Poomsae forms and belt advancement"
     ],
     scheduleSnippet: "Mon, Wed, Thu: 6:30 PM – 7:45 PM | Sat: 11:15 AM",
-    image: "public/images/home/4.png",
+    image: "/taekwondo/images/homes/4.png",
     badgeColor: "bg-red-100 text-red-800 border-red-300",
   },
   {
@@ -126,7 +126,7 @@ export const PROGRAMS: Program[] = [
       "Junior leadership & assistant instructor pathway"
     ],
     scheduleSnippet: "Tue & Thu: 7:45 PM – 9:00 PM | Sat: 1:00 PM",
-    image: "public/images/home/7.png",
+    image: "/taekwondo/images/homes/7.png",
     badgeColor: "bg-neutral-900 text-neutral-100 border-neutral-700",
   },
 ];
@@ -189,20 +189,7 @@ export const COACHES: Coach[] = [
       "Specialized in Poomsae & Freestyle Taekwondo",
       "Demonstration & Advanced Skills Training"
     ],
-    image: "/images/coach/head-coach.svg",
-  },
-  {
-    name: "[Zumba Fitness Instructor name]",
-    role: "Zumba Fitness Instructor",
-    rank: "Certified Zumba Instructor",
-    bio: "Brings high-energy dance fitness to our academy. Classes are fun, beginner friendly, and designed to improve stamina, flexibility, and coordination while burning calories. Open to ladies, teens, and adults of every fitness level.",
-    certifications: [
-      "Zumba Certified Instructor",
-      "Dance Fitness & Cardio Specialist",
-      "Beginner Friendly Group Classes",
-      "Stamina, Weight Loss & Flexibility Training"
-    ],
-    image: "public /images/coach/assistant-coach.svg",
+    image: "/taekwondo/images/coach/head-coach.svg",
   },
 ];
 
@@ -220,56 +207,56 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: "High Flying Roundhouse Drill",
     category: "Training",
     description: "Students practicing explosive jump kicks with target pads under instructor guidance.",
-    image: "public /images/gallery/highfly.png",
+    image: "/taekwondo/images/gallery/highfly.png",
   },
   {
     id: 2,
     title: "Olympic Sparring Session",
     category: "Sparring",
     description: "Protective gear sparring session focusing on tactical footwork and scoring combinations.",
-    image: "/images/gallery/gallery-2.svg",
+    image: "/taekwondo/images/gallery/gallery-2.svg",
   },
   {
     id: 3,
     title: "Black Belt Dan Promotion Ceremony",
     category: "Graduation",
     description: "Celebration of dedicated students who achieved their official Kukkiwon 1st Dan Black Belts.",
-    image: "/images/gallery/gallery-3.svg",
+    image: "/taekwondo/images/gallery/gallery-3.svg",
   },
   {
     id: 4,
     title: "Little Tigers Graduation Day",
     category: "Kids",
     description: "Our youngest martial artists proudly demonstrating their focus, balance, and new belts.",
-    image: "/images/gallery/gallery-4.svg",
+    image: "/taekwondo/images/gallery/gallery-4.svg",
   },
   {
     id: 5,
     title: "State Championship Medal Ceremony",
     category: "Tournaments",
     description: "High Skill Academy team members taking the podium at the regional open tournament.",
-    image: "/images/gallery/gallery-5.svg",
+    image: "/taekwondo/images/gallery/gallery-5.svg",
   },
   {
     id: 6,
     title: "Traditional Poomsae Demonstration",
     category: "Training",
     description: "Precision, balance, and breath control demonstrated during synchronized form practice.",
-    image: "/images/gallery/gallery-6.svg",
+    image: "/taekwondo/images/gallery/gallery-6.svg",
   },
   {
     id: 7,
     title: "Full Team Sparring Clinic",
     category: "Sparring",
     description: "Visiting master guest seminar covering high-level electronic chest protector scoring.",
-    image: "/images/gallery/gallery-7.svg",
+    image: "/taekwondo/images/gallery/gallery-7.svg",
   },
   {
     id: 8,
     title: "Junior Belt Promotion Test",
     category: "Graduation",
     description: "Demonstrating board breaking, self-defense escapes, and oral Taekwondo history.",
-    image: "/images/gallery/gallery-8.svg",
+    image: "/taekwondo/images/gallery/gallery-8.svg",
   },
 ];
 
@@ -289,7 +276,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     category: "Championship",
     description: "High Skill Taekwondo Academy students secured top honours across junior sparring and poomsae categories at the regional championship.",
     badge: "12 Gold • 8 Silver • 5 Bronze",
-    image: "/images/achievements/trophy-state.svg",
+    image: "/taekwondo/images/achievements/trophy-state.svg",
   },
   {
     year: "Recent Season",
@@ -297,7 +284,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     category: "Recognition",
     description: "Recognized for outstanding youth development, anti-bullying education, and community contribution.",
     badge: "Excellence in Martial Arts",
-    image: "/images/achievements/best-academy-award.svg",
+    image: "/taekwondo/images/achievements/best-academy-award.svg",
   },
   {
     year: "Annual Milestone",
@@ -305,7 +292,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     category: "Recognition",
     description: "A proud milestone celebrating over 100 students guided from beginner white belt to official Kukkiwon Black Belt ranks.",
     badge: "100+ Black Belts Produced",
-    image: "/images/achievements/black-belt-graduation.svg",
+    image: "/taekwondo/images/achievements/black-belt-graduation.svg",
   },
   {
     year: "Annual Tournament",
@@ -313,7 +300,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     category: "Championship",
     description: "Our demonstration and poomsae squad earned top scores for synchronization, power, and technical execution.",
     badge: "1st Place Demonstration",
-    image: "/images/achievements/national-championship.svg",
+    image: "/taekwondo/images/achievements/national-championship.svg",
   },
 ];
 
