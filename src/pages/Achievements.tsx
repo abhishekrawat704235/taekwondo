@@ -1,30 +1,58 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Trophy, Award, Medal, Star } from 'lucide-react';
-import { ACHIEVEMENTS } from '../data/academyData';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Trophy, Award, Medal, Star } from "lucide-react";
+import { ACHIEVEMENTS } from "../data/academyData";
 
 const danPromotions = [
-  { rank: '1st Poom / Junior Black Belt', candidates: '14 Students Promoted', exam: 'Comprehensive Forms, Sparring & Board Breaking' },
-  { rank: '1st Dan Adult Black Belt', candidates: '9 Students Promoted', exam: 'Self-Defense Escapes, Olympic Sparring & Thesis' },
-  { rank: '2nd Dan Black Belt', candidates: '5 Instructors Promoted', exam: 'Advanced Poomsae, Demonstration & Mentorship' },
-  { rank: '3rd Dan Black Belt', candidates: '2 Senior Coaches Promoted', exam: 'Mastery of Traditional Curriculum & Leadership' },
+  {
+    rank: "1st Poom / Junior Black Belt",
+    candidates: "14 Students Promoted",
+    exam: "Comprehensive Forms, Sparring & Board Breaking",
+  },
+  {
+    rank: "1st Dan Adult Black Belt",
+    candidates: "9 Students Promoted",
+    exam: "Self-Defense Escapes, Olympic Sparring & Thesis",
+  },
+  {
+    rank: "2nd Dan Black Belt",
+    candidates: "5 Instructors Promoted",
+    exam: "Advanced Poomsae, Demonstration & Mentorship",
+  },
+  {
+    rank: "3rd Dan Black Belt",
+    candidates: "2 Senior Coaches Promoted",
+    exam: "Mastery of Traditional Curriculum & Leadership",
+  },
 ];
 
 export const Achievements: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Header */}
-      <section className="bg-neutral-950 text-white py-16 lg:py-24 relative overflow-hidden">
+      <section
+        className="relative overflow-hidden py-16 lg:py-24 text-white"
+        style={{
+          backgroundImage: "url('/taekwondo/images/homes/10.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 bg-red-950 border border-red-600/50 text-red-400 text-xs font-bold rounded-full uppercase tracking-wider mb-4">
             <Trophy className="w-3.5 h-3.5 text-amber-400" />
             <span>Honors & Milestones</span>
           </div>
+
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
             Academy Achievements
           </h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto mt-4 text-base sm:text-lg">
-            Celebrating the hard work, tournament medals, and character milestones of our students and coaching staff.
+
+          <p className="text-neutral-300 max-w-2xl mx-auto mt-4 text-base sm:text-lg">
+            Celebrating the hard work, tournament medals, and character
+            milestones of our students and coaching staff.
           </p>
         </div>
       </section>
@@ -40,7 +68,8 @@ export const Achievements: React.FC = () => {
               Championship Podiums & Recognition
             </h2>
             <p className="text-neutral-600 text-sm sm:text-base mt-2">
-              Recognizing athletic dedication across state, regional, and national martial arts events.
+              Recognizing athletic dedication across state, regional, and
+              national martial arts events.
             </p>
           </div>
 
@@ -99,7 +128,8 @@ export const Achievements: React.FC = () => {
               Black Belt Dan Promotions
             </h2>
             <p className="text-neutral-600 text-sm sm:text-base mt-2">
-              Earning a Black Belt requires years of perseverance, intense physical testing, and embodying the five tenets of Taekwondo.
+              Earning a Black Belt requires years of perseverance, intense
+              physical testing, and embodying the five tenets of Taekwondo.
             </p>
           </div>
 
@@ -113,8 +143,12 @@ export const Achievements: React.FC = () => {
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-base text-white">{p.rank}</h4>
-                  <p className="text-xs font-bold text-amber-400 mt-1">{p.candidates}</p>
+                  <h4 className="font-extrabold text-base text-white">
+                    {p.rank}
+                  </h4>
+                  <p className="text-xs font-bold text-amber-400 mt-1">
+                    {p.candidates}
+                  </p>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed border-t border-neutral-800 pt-3">
                   {p.exam}
@@ -135,7 +169,8 @@ export const Achievements: React.FC = () => {
             Will You Be Our Next Black Belt Champion?
           </h2>
           <p className="text-neutral-400 max-w-xl mx-auto text-sm sm:text-base">
-            Every champion was once a beginner who refused to quit. Start your journey with High Skill Taekwondo Academy today.
+            Every champion was once a beginner who refused to quit. Start your
+            journey with High Skill Taekwondo Academy today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link

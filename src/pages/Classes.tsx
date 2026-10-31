@@ -1,34 +1,49 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Clock, 
-  Calendar, 
-  CheckCircle2, 
-  ArrowRight
-} from 'lucide-react';
-import { PROGRAMS, WEEKLY_SCHEDULE } from '../data/academyData';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Clock, Calendar, CheckCircle2, ArrowRight } from "lucide-react";
+import { PROGRAMS, WEEKLY_SCHEDULE } from "../data/academyData";
 
 export const Classes: React.FC = () => {
-  const [selectedDayFilter, setSelectedDayFilter] = useState<string>('All');
+  const [selectedDayFilter, setSelectedDayFilter] = useState<string>("All");
 
-  const filteredDays = selectedDayFilter === 'All'
-    ? WEEKLY_SCHEDULE
-    : WEEKLY_SCHEDULE.filter((d) => d.day.includes(selectedDayFilter));
+  const filteredDays =
+    selectedDayFilter === "All"
+      ? WEEKLY_SCHEDULE
+      : WEEKLY_SCHEDULE.filter((d) => d.day.includes(selectedDayFilter));
 
   return (
     <div className="bg-white min-h-screen">
       {/* 1. Header Banner */}
-      <section className="bg-neutral-950 text-white py-16 lg:py-24 relative overflow-hidden">
+      <section className="relative bg-neutral-950 text-white py-20 lg:py-28 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/taekwondo/images/classs/classbbg.png"
+            alt="Taekwondo Classes Background"
+            className="w-full h-full object-cover object-center"
+          />
+
+          {/* Red Gradient Effects */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-black/70"></div>
+        </div>
+
+        {/* Header Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 bg-red-950 border border-red-600/50 text-red-400 text-xs font-bold rounded-full uppercase tracking-wider mb-4">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 bg-red-950/80 border border-red-600/50 text-red-400 text-xs font-bold rounded-full uppercase tracking-wider mb-5 backdrop-blur-sm">
             <Calendar className="w-3.5 h-3.5" />
             <span>Curriculum & Schedule</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
             Taekwondo Classes & Timetable
           </h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto mt-4 text-base sm:text-lg">
-            Age-appropriate martial arts training structured for steady progression, high energy, and lifelong confidence.
+
+          {/* Description */}
+          <p className="text-neutral-200 max-w-2xl mx-auto mt-5 text-base sm:text-lg leading-relaxed">
+            Age-appropriate martial arts training structured for steady
+            progression, high energy, and lifelong confidence.
           </p>
         </div>
       </section>
@@ -44,7 +59,8 @@ export const Classes: React.FC = () => {
               Find The Perfect Class For You or Your Child
             </h2>
             <p className="text-neutral-600 text-sm sm:text-base mt-2">
-              Every class is led by certified black belt masters in our fully equipped, shock-absorbing dojang.
+              Every class is led by certified black belt masters in our fully
+              equipped, shock-absorbing dojang.
             </p>
           </div>
 
@@ -53,7 +69,7 @@ export const Classes: React.FC = () => {
               <div
                 key={prog.id}
                 className={`bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 items-center ${
-                  idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                  idx % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 {/* Visual Image */}
@@ -64,7 +80,9 @@ export const Classes: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-md text-xs font-bold border shadow-sm ${prog.badgeColor}`}>
+                    <span
+                      className={`px-3 py-1 rounded-md text-xs font-bold border shadow-sm ${prog.badgeColor}`}
+                    >
                       {prog.ageGroup}
                     </span>
                   </div>
@@ -74,7 +92,9 @@ export const Classes: React.FC = () => {
                 <div className="lg:col-span-7 p-6 sm:p-10 space-y-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                      <h3 className="text-2xl font-extrabold text-neutral-900">{prog.title}</h3>
+                      <h3 className="text-2xl font-extrabold text-neutral-900">
+                        {prog.title}
+                      </h3>
                       <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
                         Level: {prog.level}
                       </span>
@@ -91,7 +111,10 @@ export const Classes: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                     {prog.highlights.map((h, hIdx) => (
-                      <div key={hIdx} className="flex items-start space-x-2 text-xs text-neutral-700">
+                      <div
+                        key={hIdx}
+                        className="flex items-start space-x-2 text-xs text-neutral-700"
+                      >
                         <CheckCircle2 className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </div>
@@ -130,22 +153,23 @@ export const Classes: React.FC = () => {
               Class Schedule Overview
             </h2>
             <p className="text-neutral-600 text-sm sm:text-base mt-2">
-              Classes run Monday through Saturday. Students typically train 2 to 3 days per week.
+              Classes run Monday through Saturday. Students typically train 2 to
+              3 days per week.
             </p>
 
             {/* Filter buttons */}
             <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-              {['All', 'Monday', 'Tuesday', 'Friday', 'Saturday'].map((day) => (
+              {["All", "Monday", "Tuesday", "Friday", "Saturday"].map((day) => (
                 <button
                   key={day}
                   onClick={() => setSelectedDayFilter(day)}
                   className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors cursor-pointer ${
                     selectedDayFilter === day
-                      ? 'bg-red-600 text-white shadow-sm'
-                      : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                      ? "bg-red-600 text-white shadow-sm"
+                      : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
                   }`}
                 >
-                  {day === 'All' ? 'All Days' : day}
+                  {day === "All" ? "All Days" : day}
                 </button>
               ))}
             </div>
@@ -177,7 +201,9 @@ export const Classes: React.FC = () => {
                         <span className="font-bold text-neutral-900 text-sm block">
                           {cls.program}
                         </span>
-                        <span className="text-xs text-neutral-500">{cls.ageLevel}</span>
+                        <span className="text-xs text-neutral-500">
+                          {cls.ageLevel}
+                        </span>
                       </div>
                       <div className="text-xs font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-md self-start sm:self-auto">
                         {cls.time}
@@ -191,7 +217,8 @@ export const Classes: React.FC = () => {
 
           <div className="mt-8 text-center">
             <p className="text-xs text-neutral-500">
-              * Schedule subject to special belt grading events and tournament seminars.
+              * Schedule subject to special belt grading events and tournament
+              seminars.
             </p>
           </div>
         </div>
@@ -208,24 +235,46 @@ export const Classes: React.FC = () => {
               What To Expect In Your First Trial Class
             </h2>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              We know starting something new can feel intimidating. Our masters take personal care of beginners:
+              We know starting something new can feel intimidating. Our masters
+              take personal care of beginners:
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 text-left">
               <div className="p-5 bg-neutral-900 rounded-xl border border-neutral-800">
-                <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-bold text-sm flex items-center justify-center mb-3">1</span>
-                <h4 className="font-bold text-white text-sm">Wear Workout Clothes</h4>
-                <p className="text-xs text-neutral-400 mt-1">Wear regular sweatpants/joggers and a t-shirt. No special uniform needed for your trial.</p>
+                <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-bold text-sm flex items-center justify-center mb-3">
+                  1
+                </span>
+                <h4 className="font-bold text-white text-sm">
+                  Wear Workout Clothes
+                </h4>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Wear regular sweatpants/joggers and a t-shirt. No special
+                  uniform needed for your trial.
+                </p>
               </div>
               <div className="p-5 bg-neutral-900 rounded-xl border border-neutral-800">
-                <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-bold text-sm flex items-center justify-center mb-3">2</span>
-                <h4 className="font-bold text-white text-sm">Meet Your Master</h4>
-                <p className="text-xs text-neutral-400 mt-1">Arrive 10 minutes early so our head instructor can show you the dojang and bow-in etiquette.</p>
+                <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-bold text-sm flex items-center justify-center mb-3">
+                  2
+                </span>
+                <h4 className="font-bold text-white text-sm">
+                  Meet Your Master
+                </h4>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Arrive 10 minutes early so our head instructor can show you
+                  the dojang and bow-in etiquette.
+                </p>
               </div>
               <div className="p-5 bg-neutral-900 rounded-xl border border-neutral-800">
-                <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-bold text-sm flex items-center justify-center mb-3">3</span>
-                <h4 className="font-bold text-white text-sm">Have Fun & Kick Pads!</h4>
-                <p className="text-xs text-neutral-400 mt-1">Learn basic stances, balance, and your very first front and roundhouse target kicks.</p>
+                <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-bold text-sm flex items-center justify-center mb-3">
+                  3
+                </span>
+                <h4 className="font-bold text-white text-sm">
+                  Have Fun & Kick Pads!
+                </h4>
+                <p className="text-xs text-neutral-400 mt-1">
+                  Learn basic stances, balance, and your very first front and
+                  roundhouse target kicks.
+                </p>
               </div>
             </div>
 
